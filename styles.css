@@ -1,0 +1,234 @@
+/* ============================================================
+   styles.css -- silverwoi.me
+   RFC-inspired minimal personal website
+   ============================================================ */
+
+/* --- Custom Properties --- */
+:root {
+  --color-text: #111111;
+  --color-background: #ffffff;
+  --color-link: #0000ee;
+  --color-link-visited: #551a8b;
+  --color-muted: #666666;
+  --color-divider: #111111;
+
+  --font-mono: 'IBM Plex Mono', 'Courier New', 'Courier', monospace;
+
+  --width-content: 650px;
+  --spacing-section: 3rem;
+  --spacing-block: 1.5rem;
+  --spacing-inline: 1rem;
+
+  --font-size-base: 14px;
+  --font-size-heading: 16px;
+  --line-height: 1.7;
+}
+
+/* --- Dark Mode --- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: #e0e0e0;
+    --color-background: #1a1a1a;
+    --color-link: #6699ff;
+    --color-link-visited: #b394d4;
+    --color-muted: #999999;
+    --color-divider: #e0e0e0;
+  }
+}
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  margin: 0;
+  padding: 1rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: var(--color-text);
+  color: var(--color-background);
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4 {
+  font-family: var(--font-mono);
+  font-weight: normal;
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: var(--spacing-inline);
+}
+
+h1 {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+h2 {
+  font-size: var(--font-size-heading);
+  margin-bottom: var(--spacing-block);
+}
+
+h3 {
+  font-size: var(--font-size-base);
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--spacing-block);
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--color-link-visited);
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* --- Layout --- */
+.site-container {
+  max-width: var(--width-content);
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+section {
+  margin-bottom: var(--spacing-section);
+}
+
+/* --- RFC Header / Hero --- */
+.rfc-header {
+  margin-bottom: var(--spacing-section);
+}
+
+.rfc-meta-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+}
+
+.rfc-title {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+.rfc-subtitle {
+  text-align: center;
+  font-size: var(--font-size-base);
+  color: var(--color-muted);
+  margin-bottom: 0;
+}
+
+/* --- Section Numbering --- */
+.section-number {
+  margin-right: 0.5em;
+}
+
+/* --- Table of Contents --- */
+.toc ol {
+  padding-left: 2em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.toc li {
+  margin-bottom: 0.25rem;
+}
+
+/* --- Dividers --- */
+hr {
+  border: none;
+  border-top: 1px solid var(--color-divider);
+  margin: var(--spacing-section) 0;
+}
+
+/* --- Project Items --- */
+.project-item {
+  margin-bottom: var(--spacing-block);
+  padding-left: 1.5em;
+}
+
+.project-meta,
+.writing-meta,
+.experience-meta {
+  color: var(--color-muted);
+  font-size: 13px;
+  margin-bottom: 0.5rem;
+}
+
+/* --- Writing Items --- */
+.writing-item {
+  margin-bottom: var(--spacing-block);
+  padding-left: 1.5em;
+}
+
+/* --- Experience / Timeline --- */
+.timeline-entry {
+  margin-bottom: var(--spacing-block);
+  padding-left: 1.5em;
+}
+
+/* --- Social Links --- */
+.social-links {
+  list-style: none;
+  padding-left: 1.5em;
+}
+
+.social-links li::before {
+  content: "o ";
+  color: var(--color-muted);
+}
+
+.social-links li {
+  margin-bottom: 0.25rem;
+}
+
+/* --- Footer --- */
+.site-footer {
+  color: var(--color-muted);
+  font-size: 13px;
+  margin-top: var(--spacing-section);
+}
+
+.site-footer p {
+  margin-bottom: 0;
+}
+
+/* --- Accessibility --- */
+:focus-visible {
+  outline: 2px solid var(--color-link);
+  outline-offset: 2px;
+}
+
+/* --- Responsive --- */
+@media (min-width: 700px) {
+  body {
+    padding: 2rem;
+  }
+
+  :root {
+    --font-size-base: 15px;
+    --spacing-section: 4rem;
+  }
+}
