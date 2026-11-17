@@ -1,0 +1,13 @@
+{
+  "$schema": "https://unpkg.com/wrangler/config-schema.json",
+  "name": "silverboi-me",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    { "pattern": "silverboi.me", "custom_domain": true },
+    { "pattern": "www.silverboi.me", "custom_domain": true }
+  ]
+}

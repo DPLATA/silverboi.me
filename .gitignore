@@ -1,2 +1,5 @@
 CLAUDE.md
 notes_depr.txt
+# wrangler
+.wrangler/
+node_modules/
